@@ -18,50 +18,53 @@ const cardPrice = document.getElementById("cardPrice");
 
 // OTHER VARIABLES
 const kmStandardPrice = 0.21;
-const minorDiscount = 20/100;
-const oldDiscount = 40/100;
-let finalPrice;
+const minorDiscount = 20 / 100;
+const oldDiscount = 40 / 100;
 
 //SYSTEM
+
+// form system
 
 myForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
-// OUTPUT ON CARD
-const nameValue = userName.value;
-const kmValue = userKm.value;
-const ageValue = userAge.value;
+  // take values from the user input
+  const nameValue = userName.value.trim();
+  const kmValue = Number(userKm.value);
+  const ageValue = userAge.value;
 
-console.log(nameValue, kmValue, ageValue);
+  // log values in console
+
+  console.log(nameValue, kmValue, ageValue);
+
+  // validation
+
+  if (!nameValue || isNaN(kmValue) || kmValue <= 0) {
+    alert("Il nome o i km inseriti non sono validi");
+
+    return; //if this is true stop
+  }
+
+  // values to calc Price
+
+  let basePrice = kmValue * kmStandardPrice;
+  let finalPrice = basePrice;
+
+  //discount
+
+  if (ageValue === "minor") {
+    finalPrice *= (1 - minorDiscount);
+  } else if (ageValue === "old") {
+    finalPrice *= (1 - oldDiscount);
+  }
 
 
+  const fixedFinalPrice = finalPrice.toFixed(2);
 
+  //OUTPUT
 
+  cardName.innerHTML = nameValue;
+  cardKm.innerHTML = kmValue + " km";
+  cardPrice.innerHTML = fixedFinalPrice + " €";
 
 })
-
-/* if (isNaN(ageUser) || isNaN(kmNum)) {
-  console.error("Hai inserito valori non validi per età o km.");
-} 
-else{
-  const basePrice = kmNum * kmStandardPrice;
-
-
-if(ageUser <= 18){
-    finalPrice = basePrice * (1 - minorDiscount); 
-}
-else if(ageUser >= 65){
-    finalPrice = basePrice * (1 - oldDiscount);
-}
-else{
-    finalPrice = basePrice;
-}
-
-} */
-
-
-/* const fixedFinalPrice = finalPrice.toFixed(2); */
-
-
-
-//OUTPUT
