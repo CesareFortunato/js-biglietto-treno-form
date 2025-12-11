@@ -13,6 +13,8 @@ const myForm = document.getElementById("trainForm");
 const cardName = document.getElementById("cardName");
 const cardKm = document.getElementById("cardKm");
 const cardPrice = document.getElementById("cardPrice");
+const ticketCard = document.getElementById("ticketCard");
+const allonsImg = document.getElementById("allons-img");
 
 
 
@@ -66,5 +68,10 @@ myForm.addEventListener("submit", (event) => {
   cardName.innerHTML = nameValue;
   cardKm.innerHTML = kmValue + " km";
   cardPrice.innerHTML = fixedFinalPrice + " €";
+
+  //SHOW CARD
+
+  ticketCard.classList.remove("d-none");
+  allonsImg.classList.remove("d-none");
 
 })

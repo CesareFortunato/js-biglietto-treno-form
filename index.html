@@ -7,37 +7,42 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-        <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <h1 id="pageTitle">BIGLIETTO TARDIS</h1>
-    <form id="trainForm" action="#">
-        <input id="userName" type="text">
-        <input id="userKm" type="number">
-        <select name="ageChoice" id="userAge">
-            <option value="minor">18 o meno</option>
-            <option value="major">tra 18 e 65</option>
-            <option value="old">più di 65</option>
-        </select>
-        <button id="avanti">AVANTI</button>
-    </form>
 
 
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Il tuo biglietto</h5>
-            <p class="card-text">Di seguito tutte le informazioni sul tuo acquisto</p>
+    <div id="mainContainer">
+        <h1 id="pageTitle">BIGLIETTO TARDIS</h1>
+        <form id="trainForm" action="#">
+            <input id="userName" type="text" placeholder="Il tuo nome">
+            <input id="userKm" type="number" placeholder="I chilometri che vuoi fare">
+            <select name="ageChoice" id="userAge">
+                <option value="minor">18 o meno</option>
+                <option value="major">tra 18 e 65</option>
+                <option value="old">più di 65</option>
+            </select>
+            <button id="avanti">AVANTI</button>
+        </form>
+
+        <div class="card-container">
+            <div id="ticketCard" class="card d-none col-4" style="width: 18rem;">
+                <img src="./imgs/tardis-icon.png" class="card-img-top" alt="tardis-icon">
+                <div class="card-body">
+                    <h5 class="card-title">Ecco il tuo biglietto</h5>
+                    <p class="card-text">Benvenuto sul tardis!</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li id="cardName">nome</li>
+                    <li id="cardKm">km</li>
+                    <li id="cardPrice">prezzo</li>
+                </ul>
+            </div>
+            <img id="allons-img" class="allons-img col-4 d-none" src="./imgs/allons-y.webp" alt="">
         </div>
-        <ul class="list-group list-group-flush">
-            <li id="cardName">An item</li>
-            <li id="cardKm">A second item</li>
-            <li id="cardPrice">A third item</li>
-        </ul>
+
     </div>
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>

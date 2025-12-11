@@ -13,5 +13,52 @@ body{
 
 
 #pageTitle{
-    text-align: center;    
+    text-align: center;   
+    color: aliceblue; 
 }
+
+#mainContainer{
+    margin-left: 50px;
+    margin-top: 75px;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#trainForm{
+    margin: 50px 0;
+    padding-left: 15px;
+}
+
+.card-img-top{
+    width: 10em; /* o 2rem - si adatta alla dimensione del testo */
+  height: 10em;
+  object-fit: contain;
+}
+
+.card{
+    margin-left: 15px;
+    
+}
+
+.list-group{
+    list-style: none;
+    padding: 15px;
+}
+
+.card-container{
+    display: flex;
+  align-items: flex-start; /* allinea tutto in alto */
+  gap: 1rem;
+}
+
+.allons-img{
+  max-height: 20%;
+  max-width: 19%; 
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin-left: 50px;
+}
+
+
+
