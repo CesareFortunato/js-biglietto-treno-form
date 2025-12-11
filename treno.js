@@ -4,14 +4,23 @@ const userName = document.getElementById("userName");
 const userKm = document.getElementById("userKm");
 const userAge = document.getElementById("userAge");
 
+//SELECT FORM
 
-// VARIABLES
+const myForm = document.getElementById("trainForm");
+
+//SELECT VALUES
+
+const cardName = document.getElementById("cardName");
+const cardKm = document.getElementById("cardKm");
+const cardPrice = document.getElementById("cardPrice");
+
+
+
+// OTHER VARIABLES
 const kmStandardPrice = 0.21;
-
 const minorDiscount = 20/100;
 const oldDiscount = 40/100;
-
- let finalPrice;
+let finalPrice;
 
 //SYSTEM
 if (isNaN(ageUser) || isNaN(kmNum)) {
@@ -36,8 +45,6 @@ else{
 
 const fixedFinalPrice = finalPrice.toFixed(2);
 
+
+
 //OUTPUT
-
-console.log(`ho ${ageUser} anni, e voglio fare ${kmNum} chilometri`);
-
-console.log(`Il prezzo del tuo biglietto è ${fixedFinalPrice}€`);
